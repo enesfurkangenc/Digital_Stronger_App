@@ -11,4 +11,10 @@ export default {
   warningText: '#666804',
   noticeBackground: tintColor,
   noticeText: '#fff',
+  ButtonColorMor: '#6B48FF',
+  ButtonColorGri: '#0D3F67',
+  ButtonColorBeyaz: '#FFF',
+  ButtonTextColor: '#FFF',
+  ButtonTurkuaz: '#1EE3CF',
+  BackColor: '#F2F4F6'
 };
