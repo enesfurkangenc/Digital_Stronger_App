@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, Animated } from 'react-native'
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import PropTypes from 'prop-types';
 
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { AntDesign } from '@expo/vector-icons'
 import Colors from '../../constants/Colors';
 
 const style = StyleSheet.create({
@@ -28,20 +30,55 @@ const style = StyleSheet.create({
     alignSelf: 'flex-end',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  AnimateText: {
+    padding: 10,
+    justifyContent: 'center',
+    fontFamily: 'menlo-bold',
   }
 })
 
-const WorkCard = ({ name, date, onClick }) => (
-  <TouchableOpacity style={style.CardView} onPress={onClick}>
-    <Text style={style.Name}>{name}</Text>
-    <Text style={style.Date}>{date}</Text>
-  </TouchableOpacity>
+const WorkCard = ({ name, date, onClick, onDelete, onSetting }) => (
+  <Swipeable renderRightActions={() => {
+    return (
+      <>
+        <Animated.Text
+          onPress={onDelete}
+          style={style.AnimateText}
+        >
+          <AntDesign
+            name="delete"
+            size={26}
+            color={Colors.DeleteColor}
+          />
+        </Animated.Text>
+        <Animated.Text
+          onPress={onSetting}
+          style={style.AnimateText}
+        >
+          <AntDesign
+            name="setting"
+            size={26}
+            color={Colors.ButtonColorMor}
+          />
+        </Animated.Text>
+      </>
+    )
+  }}
+  >
+    <TouchableOpacity style={style.CardView} onPress={onClick} activeOpacity={1}>
+      <Text style={style.Name}>{name}</Text>
+      <Text style={style.Date}>{date}</Text>
+    </TouchableOpacity>
+  </Swipeable>
 );
 
 WorkCard.propTypes = { 
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  onSetting: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 }
 
 export default WorkCard;

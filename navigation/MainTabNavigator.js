@@ -1,8 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import {
-  createStackNavigator,
-  createBottomTabNavigator
-} from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 
 import HomeScreen from "../screens/HomeScreen";
 import LinksScreen from "../screens/LinksScreen";
@@ -21,8 +19,8 @@ const MainStack = createStackNavigator(
     }
   },
   {
-    initialRouteName: "Home",
-    defaultNavigationOptions: {}
+    initialRouteName: 'Home',
+    defaultNavigationOptions: {},
   }
 );
 

@@ -8,7 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import AppNavigator from "./navigation/AppNavigator";
 
 // Remote Debugger icin uyari bildirimlerini kapatiyoruz
-YellowBox.ignoreWarnings(['Remote debugger']);
+YellowBox.ignoreWarnings(["Remote debugger"]);
 
 function handleLoadingError(error) {
   // In this case, you might want to report the error to your error reporting
@@ -30,8 +30,7 @@ const styles = StyleSheet.create({
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
-      // require('./assets/images/robot-dev.png'),
-      // require('./assets/images/robot-prod.png'),
+      require('./assets/images/gym.png'),
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
@@ -47,7 +46,6 @@ async function loadResourcesAsync() {
   ]);
 }
 
-
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
@@ -61,12 +59,11 @@ export default function App(props) {
         onFinish={() => handleFinishLoading(setLoadingComplete)}
       />
     );
-  } 
-    return (
-      <View style={styles.container}>
-        {Platform.OS === "ios" && <StatusBar barStyle="default" />}
-        <AppNavigator />
-      </View>
-    );
-  
+  }
+  return (
+    <View style={styles.container}>
+      {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+      <AppNavigator />
+    </View>
+  );
 }

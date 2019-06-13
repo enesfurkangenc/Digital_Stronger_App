@@ -16,5 +16,6 @@ export default {
   ButtonColorBeyaz: '#FFF',
   ButtonTextColor: '#FFF',
   ButtonTurkuaz: '#1EE3CF',
-  BackColor: '#F2F4F6'
+  BackColor: '#F2F4F6',
+  DeleteColor: '#ca3e47'
 };
