@@ -11,7 +11,7 @@ const style = StyleSheet.create({
   CardView: {
     backgroundColor: Colors.ButtonColorMor,
     minWidth: wp('90%'),
-    minHeight: 52,
+    minHeight: 82,
     borderRadius: 5,
     padding: 10,
     justifyContent: 'center',
@@ -32,8 +32,7 @@ const style = StyleSheet.create({
     justifyContent: 'center'
   },
   AnimateText: {
-    padding: 10,
-    justifyContent: 'center',
+    padding: 17,
     fontFamily: 'menlo-bold',
   }
 })
@@ -48,7 +47,7 @@ const WorkCard = ({ name, date, onClick, onDelete, onSetting }) => (
         >
           <AntDesign
             name="delete"
-            size={26}
+            size={36}
             color={Colors.DeleteColor}
           />
         </Animated.Text>
@@ -58,7 +57,7 @@ const WorkCard = ({ name, date, onClick, onDelete, onSetting }) => (
         >
           <AntDesign
             name="setting"
-            size={26}
+            size={36}
             color={Colors.ButtonColorMor}
           />
         </Animated.Text>
