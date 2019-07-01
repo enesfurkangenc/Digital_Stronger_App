@@ -16,6 +16,6 @@ export default createAppContainer(
     Auth: AuthStack,
     Welcome: WelcomeScreen
   }, {
-    initialRouteName: 'Main'
+    initialRouteName: 'Welcome'
   })
 );

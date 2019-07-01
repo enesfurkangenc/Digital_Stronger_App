@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import { AppLoading } from "expo";
 import { Asset } from "expo-asset";
 import * as Font from "expo-font";
@@ -30,11 +32,11 @@ const styles = StyleSheet.create({
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
-      require('./assets/images/gym.png'),
-      require('./assets/images/First_Screen.png'),
-      require('./assets/images/Second_Screen.png'),
-      require('./assets/images/Logo_Screen.png'),
-      require('./assets/images/Thirt_Screen.png'),
+      require("./assets/images/gym.png"),
+      require("./assets/images/First_Screen.png"),
+      require("./assets/images/Second_Screen.png"),
+      require("./assets/images/Logo_Screen.png"),
+      require("./assets/images/Thirt_Screen.png")
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
@@ -44,7 +46,7 @@ async function loadResourcesAsync() {
       "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf"),
       "menlo-bold": require("./assets/fonts/Menlo_Bold.ttf"),
       "menlo-regular": require("./assets/fonts/Menlo-Regular.ttf"),
-      "roboto": require("./assets/fonts/Roboto-Bold.ttf"),
+      roboto: require("./assets/fonts/Roboto-Bold.ttf"),
       "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf")
     })
   ]);
@@ -53,8 +55,6 @@ async function loadResourcesAsync() {
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
-  // eslint-disable-next-line react/destructuring-assignment
-  // eslint-disable-next-line react/prop-types
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading

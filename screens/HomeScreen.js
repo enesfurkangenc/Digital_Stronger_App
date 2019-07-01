@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import PropTypes from "prop-types";
 
 import Colors from "../constants/Colors";
 import WorkCard from "../components/Cards/WorkCard";
 import IconInput from '../components/TextInput/IconInput';
+import Button from "../components/Buttons/MorButton";
+import * as fireModules from '../modules/firebase';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,6 +22,13 @@ const styles = StyleSheet.create({
 });
 
 const HomeScreen = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const Login = ({ Email, Password }) => {
+    // firebase.auth.signInWithEmailAndPassword(Email, Password)
+    fireModules.LoginModule(Email, Password)
+  }
 
   return (
     <View style={styles.container}>
@@ -31,8 +40,9 @@ const HomeScreen = ({ navigation }) => {
         onSetting={() => alert("setting")}
         onDelete={() => alert("delete")}
       />
-      <IconInput change={() => {}} holder="Email Adresiniz" icon="user" />
-      <IconInput change={() => {}} holder="Şifreniz" secure icon="lock" />
+      <IconInput change={e => setEmail(e)} holder="Email Adresiniz" icon="user" src={email} />
+      <IconInput change={e => setPassword(e)} holder="Şifreniz" secure icon="lock" src={password} />
+      <Button onClick={() => Login(email, password)} name="giris yap" />
     </View>
   );
 };

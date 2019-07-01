@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "strongApp",
+    "description": "Fitness and bodybuilding workout plans",
     "slug": "strongApp",
     "privacy": "public",
     "sdkVersion": "33.0.0",

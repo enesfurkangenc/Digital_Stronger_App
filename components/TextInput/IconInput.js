@@ -22,10 +22,11 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
+    fontSize: 15
   }
 });
 
-const IconInput = ({ change, holder, secure, icon }) => {
+const IconInput = ({ change, holder, secure, icon, src }) => {
   const [secureIcon, setSecureIcon] = useState(true);
   const [secureMode, setSecureMode] = useState(secure)
   return (
@@ -37,6 +38,7 @@ const IconInput = ({ change, holder, secure, icon }) => {
         onChangeText={change}
         underlineColorAndroid="transparent"
         secureTextEntry={secureMode}
+        value={src}
       />
       <TouchableOpacity
         onPress={() => {
@@ -62,11 +64,13 @@ IconInput.propTypes = {
   change: PropTypes.func.isRequired,
   holder: PropTypes.string.isRequired,
   secure: PropTypes.bool,
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
+  src: PropTypes.string
 };
 
 IconInput.defaultProps = {
-  secure: false
+  secure: false,
+  src: ''
 };
 
 export default IconInput;
