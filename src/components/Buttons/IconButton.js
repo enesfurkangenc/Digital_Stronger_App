@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { AntDesign } from '@expo/vector-icons'
 import Colors from "../../constants/Colors";
 

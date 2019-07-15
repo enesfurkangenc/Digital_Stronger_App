@@ -1,29 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import Colors from "../../constants/Colors";
 
 
 // eslint-disable-next-line no-unused-vars
 const style = StyleSheet.create({
   Button: {
+    backgroundColor: Colors.ButtonColorGri,
     padding: 10,
     width: wp('90%'),
     height: 57,
     borderRadius: 5,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-    borderColor: Colors.ButtonColorMor,
-    borderWidth: 2
+    justifyContent: 'center'
   },
   Text: {
-    color: Colors.ButtonColorMor,
+    color: Colors.ButtonTextColor,
     textAlign: 'center',
     fontSize: 15,
     fontWeight: 'bold',
-    fontFamily: 'menlo-bold'
+    fontFamily: 'roboto'
   }
 })
 

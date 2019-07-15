@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View, YellowBox } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-import AppNavigator from "./navigation/AppNavigator";
+import AppNavigator from "./src/navigation/AppNavigator";
 
 // Remote Debugger icin uyari bildirimlerini kapatiyoruz
 YellowBox.ignoreWarnings(["Remote debugger"]);
@@ -32,22 +32,22 @@ const styles = StyleSheet.create({
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
-      require("./assets/images/gym.png"),
-      require("./assets/images/First_Screen.png"),
-      require("./assets/images/Second_Screen.png"),
-      require("./assets/images/Logo_Screen.png"),
-      require("./assets/images/Thirt_Screen.png")
+      require("./src/assets/images/gym.png"),
+      require("./src/assets/images/First_Screen.png"),
+      require("./src/assets/images/Second_Screen.png"),
+      require("./src/assets/images/Logo_Screen.png"),
+      require("./src/assets/images/Thirt_Screen.png")
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
       ...Ionicons.font,
       // We include SpaceMono because we use it in HomeScreen.js. Feel free to
       // remove this if you are not using it in your app
-      "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf"),
-      "menlo-bold": require("./assets/fonts/Menlo_Bold.ttf"),
-      "menlo-regular": require("./assets/fonts/Menlo-Regular.ttf"),
-      roboto: require("./assets/fonts/Roboto-Bold.ttf"),
-      "roboto-regular": require("./assets/fonts/Roboto-Regular.ttf")
+      "space-mono": require("./src/assets/fonts/SpaceMono-Regular.ttf"),
+      "menlo-bold": require("./src/assets/fonts/Menlo_Bold.ttf"),
+      "menlo-regular": require("./src/assets/fonts/Menlo-Regular.ttf"),
+      roboto: require("./src/assets/fonts/Roboto-Bold.ttf"),
+      "roboto-regular": require("./src/assets/fonts/Roboto-Regular.ttf")
     })
   ]);
 }
